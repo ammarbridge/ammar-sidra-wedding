@@ -1,0 +1,17 @@
+{
+  "name": "ammar-sidra-wedding-invitation",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js --host --port 5173",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

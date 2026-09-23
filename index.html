@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Ammar &amp; Sidra — Wedding Invitation</title>
+  <meta name="description" content="You are cordially invited to celebrate the wedding of Ammar &amp; Sidra at The White Palace.">
+  <meta property="og:title" content="Ammar &amp; Sidra Wedding Invitation">
+  <meta property="og:description" content="Sunday, October 11, 2026 • The White Palace">
+  <meta property="og:image" content="/grand_hall.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body class="envelope-active">
+  <!-- Audio Element -->
+  <audio id="bg-audio" loop preload="auto" src="/music.mp3"></audio>
+
+  <!-- Top Floating Glass Navigation Bar -->
+  <header class="top-nav" id="top-nav">
+    <div class="nav-left">
+      <span class="nav-brand">A &amp; S</span>
+    </div>
+    <div class="nav-actions">
+      <!-- Music toggle button with equalizer visualizer bars -->
+      <button id="music-toggle" class="nav-btn music-btn" aria-label="Toggle Music" title="Play/Mute Music">
+        <span class="eq-bars">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+          <span class="bar bar-4"></span>
+        </span>
+        <svg class="icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path class="speaker-sound" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          <line class="speaker-mute-line" x1="23" y1="9" x2="17" y2="15"></line>
+          <line class="speaker-mute-line" x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+      </button>
+
+      <!-- Language Switcher Pill -->
+      <button id="lang-toggle" class="nav-btn lang-pill" aria-label="Switch Language">
+        <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span id="lang-label">EN</span>
+      </button>
+
+      <!-- Love Reaction Button -->
+      <button id="love-btn" class="nav-btn love-btn" aria-label="Send Love">
+        <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <span id="love-count">87</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Screen Frame Container -->
+  <main class="app-viewport" id="app-viewport">
+    
+    <!-- ==============================================
+         PHASE 1: INTERACTIVE 3D ENVELOPE OPENING
+         ============================================== -->
+    <section class="phase-envelope" id="phase-envelope">
+      <div class="envelope-scene">
+        <!-- Floating Prompt / Header -->
+        <div class="envelope-header-text">
+          <p class="envelope-tagline" data-i18n="envelope.tagline">POV: You just found your 2026 wedding invitation 💌💍</p>
+        </div>
+
+        <!-- 3D Envelope Wrapper -->
+        <div class="envelope-box" id="envelope-box">
+          <!-- Back Interior Paper -->
+          <div class="envelope-back">
+            <div class="inner-lining-pattern"></div>
+            <!-- Letter Card inside envelope that slides up -->
+            <div class="envelope-letter-card" id="envelope-letter-card">
+              <div class="letter-gold-crest"></div>
+              <div class="letter-monogram">A &amp; S</div>
+              <div class="letter-tag" data-i18n="envelope.formalInvite">WEDDING INVITATION</div>
+            </div>
+            <!-- Golden Light Ray Emitter (inside envelope) -->
+            <div class="envelope-light-beam" id="envelope-light-beam"></div>
+          </div>
+
+          <!-- Bottom Flap -->
+          <div class="envelope-flap flap-bottom">
+            <div class="flap-emboss-pattern"></div>
+          </div>
+
+          <!-- Left Flap -->
+          <div class="envelope-flap flap-left">
+            <div class="flap-emboss-pattern"></div>
+          </div>
+
+          <!-- Right Flap -->
+          <div class="envelope-flap flap-right">
+            <div class="flap-emboss-pattern"></div>
+          </div>
+
+          <!-- Top Flap (folds up on open) -->
+          <div class="envelope-flap flap-top" id="flap-top">
+            <div class="flap-emboss-pattern"></div>
+          </div>
+
+          <!-- 3D Wax Seal with Monogram -->
+          <div class="wax-seal-wrapper" id="wax-seal-wrapper">
+            <div class="wax-seal-glow"></div>
+            <button class="wax-seal-btn" id="wax-seal-btn" aria-label="Open Invitation">
+              <div class="wax-seal-body">
+                <div class="wax-seal-rim"></div>
+                <div class="wax-seal-ornament top-ornament">
+                  <svg viewBox="0 0 100 24" fill="currentColor">
+                    <path d="M50 0 C40 10, 20 8, 0 12 C20 16, 40 14, 50 24 C60 14, 80 16, 100 12 C80 8, 60 10, 50 0 Z"/>
+                  </svg>
+                </div>
+                <div class="wax-seal-monogram">A &amp; S</div>
+                <div class="wax-seal-ornament bottom-ornament">
+                  <svg viewBox="0 0 100 24" fill="currentColor">
+                    <path d="M50 24 C40 14, 20 16, 0 12 C20 8, 40 10, 50 0 C60 10, 80 8, 100 12 C80 16, 60 14, 50 24 Z"/>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="wax-seal-instruction" data-i18n="envelope.tapInstruction">
+              Tap wax seal to open
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SCROLLABLE CONTENT (PHASES 2 TO 8)
+         ============================================== -->
+    <div class="invitation-scroll-body" id="invitation-scroll-body">
+      
+      <!-- ==============================================
+           PHASE 2: GRAND HALL REVEAL
+           ============================================== -->
+      <section class="section phase-hall" id="phase-hall">
+        <div class="hall-bg-container">
+          <img src="/grand_hall.jpg" alt="Grand Palace Hallway" class="hall-bg-img" id="hall-bg-img">
+          <div class="hall-overlay"></div>
+          <div class="hall-sparkles"></div>
+        </div>
+
+        <div class="hall-content">
+          <div class="hall-names-block">
+            <h1 class="hall-groom" data-i18n="names.groom">Ammar</h1>
+            <div class="hall-ampersand">&amp;</div>
+            <h1 class="hall-bride" data-i18n="names.bride">Sidra</h1>
+          </div>
+          
+          <div class="hall-date-badge" data-i18n="names.dateHeader">
+            Sunday, 11 October 2026
+          </div>
+
+          <!-- Bouncing Scroll Prompt -->
+          <a href="#phase-card" class="scroll-prompt" aria-label="Scroll Down">
+            <span class="scroll-text" data-i18n="hall.scrollPrompt">Scroll to enter</span>
+            <svg class="chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           PHASE 3: FORMAL INVITATION CARD
+           ============================================== -->
+      <section class="section phase-card" id="phase-card">
+        <div class="card-ornate-container">
+          <!-- Ornate Arched Frame Header -->
+          <div class="card-arch-header">
+            <div class="arch-filigree-crest">
+              <svg viewBox="0 0 200 60" class="filigree-svg">
+                <path d="M100,5 C120,5 140,15 160,25 C175,32 195,35 200,45 C185,42 165,48 150,42 C135,36 120,25 100,25 C80,25 65,36 50,42 C35,48 15,42 0,45 C5,35 25,32 40,25 C60,15 80,5 100,5 Z" fill="url(#goldGradient)"/>
+                <circle cx="100" cy="18" r="4" fill="url(#goldGradient)"/>
+                <circle cx="85" cy="22" r="2.5" fill="url(#goldGradient)"/>
+                <circle cx="115" cy="22" r="2.5" fill="url(#goldGradient)"/>
+                <defs>
+                  <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#C5A059"/>
+                    <stop offset="50%" stop-color="#F3E5AB"/>
+                    <stop offset="100%" stop-color="#9E7B35"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <!-- Bismillah Calligraphy -->
+            <div class="bismillah-calligraphy">
+              بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </div>
+          </div>
+
+          <!-- Quranic Verse (Surah Ar-Rum 30:21) -->
+          <div class="quran-verse-block">
+            <p class="verse-arabic" dir="rtl">
+              «وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ»
+            </p>
+            <p class="verse-translation" data-i18n="card.verseTranslation">
+              "And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."
+            </p>
+            <span class="verse-reference" data-i18n="card.verseRef">— Surah Ar-Rum [30:21] —</span>
+          </div>
+
+          <div class="gold-divider-flourish">
+            <span class="flourish-line"></span>
+            <span class="flourish-gem">✦</span>
+            <span class="flourish-line"></span>
+          </div>
+
+          <!-- Announcement Body -->
+          <div class="announcement-body">
+            <p class="invitation-intro" data-i18n="card.announcement">
+              On a night crowned with love, and destined to unite two hearts, we are honored to invite you to celebrate our wedding
+            </p>
+            
+            <div class="card-couple-names">
+              <span class="couple-title" data-i18n="names.fullNames">Ammar &amp; Sidra</span>
+            </div>
+
+            <p class="invitation-blessing" data-i18n="card.blessing">
+              May Allah bless us, shower His blessings upon us, and unite us in goodness.
+            </p>
+          </div>
+
+          <!-- Ornate Footer Flourish -->
+          <div class="card-arch-footer">
+            <svg viewBox="0 0 200 40" class="filigree-svg flip-y">
+              <path d="M100,5 C120,5 140,15 160,25 C175,32 195,35 200,45 C185,42 165,48 150,42 C135,36 120,25 100,25 C80,25 65,36 50,42 C35,48 15,42 0,45 C5,35 25,32 40,25 C60,15 80,5 100,5 Z" fill="url(#goldGradient)"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           PHASE 4: SAVE THE DATE & CALENDAR SYNC
+           ============================================== -->
+      <section class="section phase-calendar" id="phase-calendar">
+        <div class="calendar-ornate-header">
+          <div class="filigree-crest-small">
+            <svg viewBox="0 0 120 30" class="filigree-svg">
+              <path d="M60,2 C70,2 80,8 90,14 C100,18 115,20 120,26 C110,24 95,28 85,24 C75,20 68,14 60,14 C52,14 45,20 35,24 C25,28 10,24 0,26 C5,20 20,18 30,14 C40,8 50,2 60,2 Z" fill="url(#goldGradient)"/>
+            </svg>
+          </div>
+          <h2 class="section-title script-title" data-i18n="calendar.title">Save the Date</h2>
+          
+          <!-- Intertwined Wedding Rings Icon -->
+          <div class="rings-icon-wrapper">
+            <svg class="rings-svg" viewBox="0 0 48 32" fill="none">
+              <ellipse cx="18" cy="16" rx="12" ry="12" stroke="url(#goldGradient)" stroke-width="2.5"/>
+              <ellipse cx="30" cy="16" rx="12" ry="12" stroke="url(#goldGradient)" stroke-width="2.5"/>
+              <circle cx="18" cy="4" r="2.5" fill="#D4AF37"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Monthly Calendar Card -->
+        <div class="calendar-card">
+          <div class="calendar-month-title">
+            <span data-i18n="calendar.month">October 2026</span>
+          </div>
+
+          <div class="calendar-grid">
+            <div class="calendar-day-header" data-i18n="days.m">M</div>
+            <div class="calendar-day-header" data-i18n="days.t">T</div>
+            <div class="calendar-day-header" data-i18n="days.w">W</div>
+            <div class="calendar-day-header" data-i18n="days.th">T</div>
+            <div class="calendar-day-header" data-i18n="days.f">F</div>
+            <div class="calendar-day-header" data-i18n="days.sa">S</div>
+            <div class="calendar-day-header" data-i18n="days.su">S</div>
+
+            <!-- October 2026 starts on Thursday (1st) -> 3 empty cells (Mon, Tue, Wed) -->
+            <div class="calendar-cell empty"></div>
+            <div class="calendar-cell empty"></div>
+            <div class="calendar-cell empty"></div>
+            <div class="calendar-cell">1</div>
+            <div class="calendar-cell">2</div>
+            <div class="calendar-cell">3</div>
+            <div class="calendar-cell">4</div>
+            <div class="calendar-cell">5</div>
+            <div class="calendar-cell">6</div>
+            <div class="calendar-cell">7</div>
+            <div class="calendar-cell">8</div>
+            <div class="calendar-cell">9</div>
+            <div class="calendar-cell">10</div>
+            <!-- The Big Day: 11 October! -->
+            <div class="calendar-cell event-highlight" id="wedding-day-cell">
+              <span class="highlight-ring"></span>
+              <span class="day-number">11</span>
+              <span class="highlight-heart">🤍</span>
+            </div>
+            <div class="calendar-cell">12</div>
+            <div class="calendar-cell">13</div>
+            <div class="calendar-cell">14</div>
+            <div class="calendar-cell">15</div>
+            <div class="calendar-cell">16</div>
+            <div class="calendar-cell">17</div>
+            <div class="calendar-cell">18</div>
+            <div class="calendar-cell">19</div>
+            <div class="calendar-cell">20</div>
+            <div class="calendar-cell">21</div>
+            <div class="calendar-cell">22</div>
+            <div class="calendar-cell">23</div>
+            <div class="calendar-cell">24</div>
+            <div class="calendar-cell">25</div>
+            <div class="calendar-cell">26</div>
+            <div class="calendar-cell">27</div>
+            <div class="calendar-cell">28</div>
+            <div class="calendar-cell">29</div>
+            <div class="calendar-cell">30</div>
+            <div class="calendar-cell">31</div>
+          </div>
+
+          <!-- Add to Calendar Action Button -->
+          <div class="calendar-action-container">
+            <button id="add-to-calendar-btn" class="gold-luxury-btn">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <line x1="12" y1="14" x2="12" y2="18"></line>
+                <line x1="10" y1="16" x2="14" y2="16"></line>
+              </svg>
+              <span data-i18n="calendar.addToCalendar">Add to calendar</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Couple Photo Feature (Matching the video!) -->
+        <div class="couple-portrait-container">
+          <div class="portrait-card">
+            <img src="/couple_portrait.jpg" alt="Ammar & Sidra" class="couple-img">
+            <div class="portrait-gold-rim"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           PHASE 5: VENUE & LOCATION
+           ============================================== -->
+      <section class="section phase-location" id="phase-location">
+        <div class="location-header">
+          <h2 class="section-title script-title" data-i18n="location.title">Location</h2>
+          <h3 class="venue-name" data-i18n="location.venue">The white palace</h3>
+        </div>
+
+        <!-- Venue Architectural Image -->
+        <div class="venue-image-wrapper">
+          <img src="/white_palace.jpg" alt="The White Palace Venue" class="venue-img">
+          <div class="venue-image-overlay"></div>
+        </div>
+
+        <!-- Interactive Map Snapshot Card -->
+        <div class="map-card-wrapper">
+          <div class="map-card-inner">
+            <div class="map-mockup-header">
+              <div class="map-title-row">
+                <span class="map-pin-icon">📍</span>
+                <strong data-i18n="location.venueAddress">The White Palace, Grand Ballroom</strong>
+              </div>
+              <span class="map-badge" data-i18n="location.mapView">Maps</span>
+            </div>
+            
+            <!-- Map Preview Visual Canvas -->
+            <div class="map-interactive-view">
+              <iframe 
+                title="Venue Map Location" 
+                class="google-map-iframe" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.61185040685!2d31.2584644!3d30.0594838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1711200000000!5m2!1sen!2seg" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <!-- Open In Maps Button -->
+            <div class="map-btn-container">
+              <a href="https://maps.google.com/?q=The+White+Palace" target="_blank" rel="noopener noreferrer" class="gold-luxury-btn map-btn">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path>
+                  <circle cx="12" cy="9" r="2.5"></circle>
+                </svg>
+                <span data-i18n="location.openInMaps">Open in Maps</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           PHASE 6: EVENT TIMELINE (VERTICAL STEPPER)
+           ============================================== -->
+      <section class="section phase-timeline" id="phase-timeline">
+        <div class="timeline-header">
+          <div class="filigree-crest-small">
+            <svg viewBox="0 0 120 30" class="filigree-svg">
+              <path d="M60,2 C70,2 80,8 90,14 C100,18 115,20 120,26 C110,24 95,28 85,24 C75,20 68,14 60,14 C52,14 45,20 35,24 C25,28 10,24 0,26 C5,20 20,18 30,14 C40,8 50,2 60,2 Z" fill="url(#goldGradient)"/>
+            </svg>
+          </div>
+          <h2 class="section-title script-title" data-i18n="timeline.title">Wedding Program</h2>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-vertical-line"></div>
+
+          <!-- Step 1: 20:00 Welcome & Arrival -->
+          <div class="timeline-item left">
+            <div class="timeline-badge">
+              <span class="timeline-rose-icon">🌹</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-time">20:00</div>
+              <h4 class="timeline-event-name" data-i18n="timeline.step1Title">Welcome &amp; Arrival</h4>
+              <p class="timeline-event-desc" data-i18n="timeline.step1Desc">Welcoming the bride and groom &amp; honorable guests</p>
+            </div>
+          </div>
+
+          <!-- Step 2: 21:00 Wedding Ceremony -->
+          <div class="timeline-item right">
+            <div class="timeline-badge">
+              <span class="timeline-rose-icon">💍</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-time">21:00</div>
+              <h4 class="timeline-event-name" data-i18n="timeline.step2Title">Wedding Ceremony</h4>
+              <p class="timeline-event-desc" data-i18n="timeline.step2Desc">The official ceremony &amp; celebration</p>
+            </div>
+          </div>
+
+          <!-- Step 3: 22:00 Dinner Reception -->
+          <div class="timeline-item left">
+            <div class="timeline-badge">
+              <span class="timeline-rose-icon">🍽️</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-time">22:00</div>
+              <h4 class="timeline-event-name" data-i18n="timeline.step3Title">The Dinner</h4>
+              <p class="timeline-event-desc" data-i18n="timeline.step3Desc">Grand royal banquet &amp; delights</p>
+            </div>
+          </div>
+
+          <!-- Step 4: 02:00 Farewell -->
+          <div class="timeline-item right">
+            <div class="timeline-badge">
+              <span class="timeline-rose-icon">✨</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-time">02:00</div>
+              <h4 class="timeline-event-name" data-i18n="timeline.step4Title">Farewell &amp; Send-off</h4>
+              <p class="timeline-event-desc" data-i18n="timeline.step4Desc">Farewell &amp; thanking the guests</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chandelier Graphic Transition -->
+        <div class="timeline-bottom-chandelier">
+          <svg viewBox="0 0 100 80" class="chandelier-svg">
+            <path d="M50 0 L50 20 M30 20 L70 20 M20 30 Q50 35 80 30 M25 45 Q50 55 75 45 M35 60 Q50 70 65 60 M50 70 L50 78" stroke="url(#goldGradient)" stroke-width="2" fill="none"/>
+            <circle cx="50" cy="80" r="3" fill="#D4AF37"/>
+            <circle cx="35" cy="60" r="2" fill="#D4AF37"/>
+            <circle cx="65" cy="60" r="2" fill="#D4AF37"/>
+            <circle cx="20" cy="30" r="2.5" fill="#D4AF37"/>
+            <circle cx="80" cy="30" r="2.5" fill="#D4AF37"/>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           PHASE 7: RSVP FORM ("CONFIRM ATTENDANCE")
+           ============================================== -->
+      <section class="section phase-rsvp" id="phase-rsvp">
+        <div class="rsvp-card">
+          <!-- Chandelier Icon Header -->
+          <div class="rsvp-chandelier-icon">
+            <svg viewBox="0 0 100 80" class="chandelier-svg-gold">
+              <path d="M50 0 L50 20 M30 20 L70 20 M20 30 Q50 35 80 30 M25 45 Q50 55 75 45 M35 60 Q50 70 65 60 M50 70 L50 78" stroke="url(#goldGradient)" stroke-width="2" fill="none"/>
+              <circle cx="50" cy="80" r="3" fill="#D4AF37"/>
+              <circle cx="35" cy="60" r="2" fill="#D4AF37"/>
+              <circle cx="65" cy="60" r="2" fill="#D4AF37"/>
+              <circle cx="20" cy="30" r="2.5" fill="#D4AF37"/>
+              <circle cx="80" cy="30" r="2.5" fill="#D4AF37"/>
+            </svg>
+          </div>
+
+          <h2 class="section-title script-title" data-i18n="rsvp.title">Confirm Attendance</h2>
+          <p class="rsvp-subtitle" data-i18n="rsvp.subtitle">Please let us know if you will be joining us on our special day</p>
+
+          <form id="rsvp-form" class="rsvp-form" novalidate>
+            <!-- Name Input -->
+            <div class="form-group">
+              <label for="guest-name" data-i18n="rsvp.nameLabel">Your name *</label>
+              <input type="text" id="guest-name" class="form-input" required placeholder="Enter your full name" data-i18n-placeholder="rsvp.namePlaceholder">
+            </div>
+
+            <!-- Number of Guests -->
+            <div class="form-group">
+              <label for="guest-count" data-i18n="rsvp.guestsLabel">Number of guests *</label>
+              <div class="guest-selector-container">
+                <select id="guest-count" class="form-input form-select">
+                  <option value="1">1 Guest</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Attendance Choice -->
+            <div class="form-group">
+              <label data-i18n="rsvp.statusLabel">Will you attend? *</label>
+              <div class="rsvp-radio-group">
+                <label class="radio-pill active" id="pill-attending">
+                  <input type="radio" name="attendance" value="attending" checked>
+                  <span class="pill-check">✓</span>
+                  <span data-i18n="rsvp.attending">Joyfully Accept</span>
+                </label>
+                <label class="radio-pill" id="pill-declining">
+                  <input type="radio" name="attendance" value="declined">
+                  <span class="pill-check">✕</span>
+                  <span data-i18n="rsvp.declining">Regretfully Decline</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Message / Wishes (Optional) -->
+            <div class="form-group">
+              <label for="guest-wishes" data-i18n="rsvp.wishesLabel">Warm Wishes &amp; Blessings</label>
+              <textarea id="guest-wishes" class="form-input form-textarea" rows="2" placeholder="Write a message for the couple..." data-i18n-placeholder="rsvp.wishesPlaceholder"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="rsvp-submit-btn" class="gold-luxury-btn rsvp-submit">
+              <span class="btn-spinner hidden" id="rsvp-spinner"></span>
+              <span class="btn-label" data-i18n="rsvp.submitBtn">Submit RSVP</span>
+            </button>
+          </form>
+
+          <!-- RSVP Feedback Alert Box -->
+          <div id="rsvp-feedback" class="rsvp-feedback hidden">
+            <div class="feedback-icon">✨</div>
+            <h4 class="feedback-title" data-i18n="rsvp.successTitle">Thank You!</h4>
+            <p class="feedback-msg" data-i18n="rsvp.successMsg">Your response has been warmly received. We look forward to celebrating together!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           PHASE 8: LIVE COUNTDOWN & OUTRO
+           ============================================== -->
+      <section class="section phase-countdown" id="phase-countdown">
+        <div class="countdown-card">
+          <!-- Header Ornaments -->
+          <div class="filigree-crest-small">
+            <svg viewBox="0 0 120 30" class="filigree-svg">
+              <path d="M60,2 C70,2 80,8 90,14 C100,18 115,20 120,26 C110,24 95,28 85,24 C75,20 68,14 60,14 C52,14 45,20 35,24 C25,28 10,24 0,26 C5,20 20,18 30,14 C40,8 50,2 60,2 Z" fill="url(#goldGradient)"/>
+            </svg>
+          </div>
+
+          <h2 class="section-title script-title" data-i18n="countdown.title">Countdown</h2>
+          <p class="countdown-subtitle" data-i18n="countdown.subtitle">Until our wedding</p>
+
+          <!-- Live Timer Display -->
+          <div class="countdown-timer-grid">
+            <div class="timer-box">
+              <span class="timer-num" id="cd-days">00</span>
+              <span class="timer-unit" data-i18n="countdown.days">DAYS</span>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-box">
+              <span class="timer-num" id="cd-hours">00</span>
+              <span class="timer-unit" data-i18n="countdown.hours">HOURS</span>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-box">
+              <span class="timer-num" id="cd-minutes">00</span>
+              <span class="timer-unit" data-i18n="countdown.minutes">MINUTES</span>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-box">
+              <span class="timer-num" id="cd-seconds">00</span>
+              <span class="timer-unit" data-i18n="countdown.seconds">SECONDS</span>
+            </div>
+          </div>
+
+          <!-- Bottom Rings & Couple Title -->
+          <div class="countdown-rings">
+            <svg class="rings-svg" viewBox="0 0 48 32" fill="none">
+              <ellipse cx="18" cy="16" rx="12" ry="12" stroke="url(#goldGradient)" stroke-width="2.5"/>
+              <ellipse cx="30" cy="16" rx="12" ry="12" stroke="url(#goldGradient)" stroke-width="2.5"/>
+            </svg>
+          </div>
+
+          <h3 class="countdown-couple" data-i18n="names.fullNames">Ammar &amp; Sidra</h3>
+          <p class="countdown-date-str" data-i18n="names.dateHeader">Sunday, 11 October 2026</p>
+
+          <!-- Closing Love Quote -->
+          <p class="countdown-closing-quote" data-i18n="countdown.quote">
+            Until we gather beneath a sky filled with joy, we await your presence with love 🤍
+          </p>
+
+          <!-- WhatsApp Share Button -->
+          <div class="share-btn-wrapper">
+            <button id="share-invite-btn" class="share-btn">
+              <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+              </svg>
+              <span data-i18n="share.btn">Share Invitation</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <p class="footer-monogram">A &amp; S</p>
+        <p class="footer-copy">© 2026 Ammar &amp; Sidra • Forever &amp; Always</p>
+      </footer>
+    </div>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
